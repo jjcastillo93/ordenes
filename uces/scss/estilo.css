@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Neonderthaw&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(18, 92, 49);
+  padding: 5vh;
+}
+
+#video-background {
+  position: fixed;
+  -o-object-fit: cover;
+     object-fit: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.presentacion {
+  background-color: rgba(104, 163, 129, 0.63);
+  height: 100vh;
+}
+
+.presentacion h1 {
+  font-size: 5rem;
+  padding-top: 20vh;
+  padding-left: 10vh;
+  color: white;
+}
+
+.presentacion h2 {
+  font-size: 3rem;
+  padding-left: 10vh;
+  color: white;
+}
+
+.presentacion p {
+  font-size: 2rem;
+  width: 70vh;
+  padding-left: 10vh;
+  color: white;
+}
+
+.fondo {
+  background-color: rgb(255, 255, 255);
+  padding-top: 10vh;
+}
+
+.tituloSecundario {
+  font-size: 3rem;
+  text-align: center;
+  color: rgb(18, 92, 49);
+}
+
+.ordenTrabajo {
+  background-color: rgb(18, 92, 49);
+  max-width: 70vh;
+  margin: 10vh auto;
+  padding: 5vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.ordenTrabajo input, .ordenTrabajo textarea, .ordenTrabajo select {
+  background-color: rgb(18, 92, 49);
+  color: white;
+  border: none;
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.ordenTrabajo input::-moz-placeholder, .ordenTrabajo textarea::-moz-placeholder {
+  color: white;
+}
+
+.ordenTrabajo input::placeholder, .ordenTrabajo textarea::placeholder {
+  color: white;
+}
+
+.numero {
+  width: 12vh;
+}
+
+.ordenTrabajo select {
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: rgb(18, 92, 49);
+}
+
+.tablaOrdenes {
+  border: 1px solid rgb(255, 255, 255);
+  text-align: center;
+  border-collapse: collapse;
+  margin: auto;
+  background-color: rgb(18, 92, 49);
+  color: white;
+  width: 95%;
+}
+
+.tablaOrdenes td, .tablaOrdenes th {
+  border: 1px solid rgb(255, 255, 255);
+  padding: 1vh;
+}
+
+.tablaOrdenes th {
+  background-color: rgb(1, 32, 14);
+}
+
+.botonBusqueda {
+  background-color: rgb(1, 32, 14);
+  color: white;
+  border: none;
+  padding: 3px;
+}
+
+.editar {
+  background-color: rgb(1, 32, 14);
+  color: white;
+  border: none;
+  padding: 3px;
+  margin: 1vh;
+  padding-left: 1vh;
+  padding-right: 1vh;
+}
+
+.eliminar {
+  background-color: rgb(1, 32, 14);
+  color: white;
+  border: none;
+  padding: 3px;
+}
+
+.buscadorTrabajo {
+  text-align: center;
+}
+
+.buscadorTrabajo ::-moz-placeholder {
+  color: white;
+}
+
+.buscadorTrabajo ::placeholder {
+  color: white;
+}
+
+.formBusqueda {
+  background-color: rgb(18, 92, 49);
+  color: white;
+}
+
+.formBusqueda option {
+  color: white;
+}/*# sourceMappingURL=estilo.css.map */

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./scss/estilo.css">
+</head>
+<body>
+    <header>
+        <img src="./assets/img/logotipo UCES 2011-01-01.png" alt="logo">
+    </header>
+    <main>
+        <section class="presentacion">
+            <video id="video-background" autoplay loop muted>
+                <source src="./assets/video/pexels-free-videos-853789-1920x1080-25fps (1).mp4" type="video/mp4">
+            </video>
+            <h1>SISTEMA DE ORDENES</h1>
+            <h2>ALMACENA, EDITA Y ELIMINA</h2>
+            <p> Con esta interfaz podrás agregar trabajos sin problema, además de poder buscarlos de manera sencilla desde el buscador de la interfaz. Y si te encuentras con que has subido algo erróneo, no te preocupes, podrás editarlo en cualquier momento. Sin más que añadir, esperamos que tengas una buena jornada laboral.</p>
+        </section>
+        <section class="fondo">
+            <h2 class="tituloSecundario">INGRESE ORDEN DE TRABAJO</h2>
+            <form action="" id="ordenTrabajoFormulario" class="ordenTrabajo">
+                <input type="number" name="orden" class="numero" placeholder="N° orden" required>
+                <input type="text" name="titulo" placeholder="Nombre del trabajo" required>
+                <input type="number" name="cantidad" class="numero" placeholder="Cantidad" required>
+                <input type="date" name="inicio" class="numero" placeholder="Fecha de inicio 00/00/0000" required>
+                <input type="text" name="responsable" placeholder="Responsable" required>
+                <select name="estado" class="numero estado">
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="Enviado">Enviado</option>
+                    <option value="Terminado">Terminado</option>
+                </select>
+                <textarea name="comentario" cols="30" rows="10" placeholder="Comentario" maxlength="100"></textarea>
+                <button type="submit" class="botonBusqueda">Subir orden</button>
+            </form>
+            <h2 class="tituloSecundario">ALMACEN DE ORDENES</h2>
+            <form action="" id="formularioBusqueda" class="buscadorTrabajo">
+                <input type="text" name="busqueda" placeholder="Buscador" class="formBusqueda">
+                <select name="tipoBusqueda" class="formBusqueda">
+                    <option value="numeroOrden">Número de Orden</option>
+                    <option value="titulo">Título</option>
+                    <option value="fecha">Fecha</option>
+                    <option value="estado">Estado</option>
+                </select>
+                <button type="submit" class="botonBusqueda">Buscar</button>
+                <button type="button" id="botonLimpiarBusqueda" class="botonBusqueda">Limpiar búsqueda</button>
+            </form>
+            <table id="tablaOrdenes" class="tablaOrdenes">
+                <tr>
+                    <th>N° orden</th>
+                    <th>Titulo</th>
+                    <th>Cantidad</th>
+                    <th>Inicio</th>
+                    <th>Responsable</th>
+                    <th>Estado</th>
+                    <th>Comentario</th>
+                    <th>Acciones</th>
+                </tr>
+            </table>
+        </section>
+    </main>
+    <footer></footer>
+    <script src="./js/main.js"></script>
+</body>
+</html>
