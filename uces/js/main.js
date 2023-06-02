@@ -1,3 +1,4 @@
+//clases con su constructor para definir los elementos usar
 class Item {
     constructor(orden, titulo, cantidad, inicio, responsable, estado, comentario) {
         this.orden = orden;
@@ -9,12 +10,14 @@ class Item {
         this.comentario = comentario;
     }
 }
-
+//JSON para almacenar los items ingresado en el almacenamiento local con lo explicado en clases para almacenar un array vacio
 const items = JSON.parse(localStorage.getItem("items")) || [];
+//funcion la cual permite manejar el formulario
 const ordenTrabajoFormulario = () => {
     const ordenTrabajoFormulario = document.querySelector("#ordenTrabajoFormulario");
     ordenTrabajoFormulario.addEventListener("submit", (e) => {
         e.preventDefault();
+        //recuadan los valores ingresados
         const orden = e.target.elements["orden"].value;
         const titulo = e.target.elements["titulo"].value;
         const cantidad = e.target.elements["cantidad"].value;
@@ -22,17 +25,22 @@ const ordenTrabajoFormulario = () => {
         const responsable = e.target.elements["responsable"].value;
         const estado = e.target.elements["estado"].value;
         const comentario = e.target.elements["comentario"].value;
+        //crea nuevo item
         const item = new Item(orden, titulo, cantidad, inicio, responsable, estado, comentario);
+        //pushea los elementos a items
         items.push(item);
+        //guarda los items en el almacenamiento local
         localStorage.setItem("items", JSON.stringify(items));
+        //muestra los nuevos item en la tablaOrdenes
         verItem(item);
+        //reinicia el formulario
         ordenTrabajoFormulario.reset();
     });
 };
-
 const verItem = (item) => {
     const tablaOrdenes = document.querySelector("#tablaOrdenes");
     const trItem = document.createElement("tr");
+    //crea estructura html
     trItem.innerHTML = `
         <td>${item.orden}</td>
         <td>${item.titulo}</td>
@@ -46,6 +54,7 @@ const verItem = (item) => {
             <button class="eliminar">Eliminar</button>
         </td>
     `;
+    //agrega fila al tablaOrdenes
     tablaOrdenes.append(trItem);
     const editarButton = trItem.querySelector(".editar");
     editarButton.addEventListener("click", () => editarItem(item, trItem));
@@ -62,7 +71,7 @@ const verItems = () => {
     });
 };
 
-
+//funcion para editar item
 const editarItem = (item, trItem) => {
     const ordenTrabajoFormulario = document.querySelector("#ordenTrabajoFormulario");
     ordenTrabajoFormulario.elements["orden"].value = item.orden;
@@ -74,7 +83,7 @@ const editarItem = (item, trItem) => {
     ordenTrabajoFormulario.elements["comentario"].value = item.comentario;
     eliminarItem(item, trItem);
 };
-
+//funcion para eliminar item
 const eliminarItem = (item, trItem) => {
     const index = items.indexOf(item);
     if (index > -1) {
@@ -83,10 +92,10 @@ const eliminarItem = (item, trItem) => {
     localStorage.setItem("items", JSON.stringify(items));
     trItem.remove();
 };
-
+//se llaman estas a estas funciones
 verItems();
 ordenTrabajoFormulario();
-
+//funcion para buscar elementos subidos en los item
 const buscarTrabajo = () => {
     const formularioBusqueda = document.querySelector("#formularioBusqueda");
     formularioBusqueda.addEventListener("submit", (e) => {
@@ -133,7 +142,7 @@ const buscarTrabajo = () => {
         }
     });
 };
-
+//funcion para limpiar la busqueda
 const limpiarBusqueda = () => {
     const formularioBusqueda = document.querySelector("#formularioBusqueda");
     formularioBusqueda.reset();
