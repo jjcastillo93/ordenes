@@ -4,8 +4,8 @@
       "titulo": "EJEMPLO DE ORDEN PARA BORRAR O EDITAR ORDEN",
       "cantidad": 10,
       "inicio": "2023-06-01",
-      "responsable": "Juan Pérez",
-      "estado": "Tpendiente",
+      "responsable": "Juan Castillo",
+      "estado": "pendiente",
       "comentario": "este es una guia de como de debe llenar las ordenes"
     }
   ]

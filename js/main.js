@@ -198,7 +198,25 @@ class Item {
       }
     });
   };
-  
+  //funcion para limpiar la busqueda
+const limpiarBusqueda = () => {
+  const formularioBusqueda = document.querySelector("#formularioBusqueda");
+  formularioBusqueda.reset();
+
+  const tablaOrdenes = document.querySelector("#tablaOrdenes");
+  const filas = tablaOrdenes.getElementsByTagName("tr");
+
+  for (let i = 1; i < filas.length; i++) {
+      const fila = filas[i];
+      fila.style.display = "";
+  }
+};
+
+buscarTrabajo();
+
+const botonLimpiarBusqueda = document.querySelector("#botonLimpiarBusqueda");
+botonLimpiarBusqueda.addEventListener("click", limpiarBusqueda);
+
   // Carga los items desde el archivo ordenes.json
   cargarItemsDesdeArchivo();
   
